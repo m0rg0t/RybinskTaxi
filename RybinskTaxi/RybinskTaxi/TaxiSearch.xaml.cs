@@ -162,5 +162,24 @@ namespace RybinskTaxi
                 get { return String.Format("{0} ({1})", _name, _count); }
             }
         }
+
+        private void GoBack(object sender, RoutedEventArgs e)
+        {
+            //this.Frame.Navigate(typeof(GroupedItemsPage));
+            if (this.Frame.CanGoBack)
+            {
+                this.Frame.GoBack();
+                //this.Frame.Rem
+                this.Frame.Navigate(typeof(GroupedItemsPage));
+            };
+        }
+
+        void ItemView_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            // Переход к соответствующей странице назначения и настройка новой страницы
+            // путем передачи необходимой информации в виде параметра навигации
+            var itemId = ((SampleDataItem)e.ClickedItem).UniqueId;
+            this.Frame.Navigate(typeof(ItemDetailPage), itemId);
+        }
     }
 }

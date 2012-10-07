@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
-  <Identity Name="14727831-99b9-4d88-9ef4-2c0f259a0589" Publisher="CN=m0rg0_000" Version="1.0.0.0" />
+  <Identity Name="43337m0rg0t.544352BC4813B" Publisher="CN=F7642D27-CCE9-4988-9BED-35B1F14EED65" Version="1.0.0.0" />
   <Properties>
-    <DisplayName>RybinskTaxi</DisplayName>
-    <PublisherDisplayName>m0rg0_000</PublisherDisplayName>
+    <DisplayName>Такси Рыбинска</DisplayName>
+    <PublisherDisplayName>m0rg0t</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
   <Prerequisites>
@@ -15,7 +15,7 @@
   </Resources>
   <Applications>
     <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="RybinskTaxi.App">
-      <VisualElements DisplayName="RybinskTaxi" Logo="Assets\Logo.png" SmallLogo="Assets\SmallLogo.png" Description="RybinskTaxi" ForegroundText="light" BackgroundColor="#464646">
+      <VisualElements DisplayName="Такси Рыбинска" Logo="Assets\Logo.png" SmallLogo="Assets\SmallLogo.png" Description="RybinskTaxi" ForegroundText="light" BackgroundColor="#464646">
         <DefaultTile ShowName="allLogos" />
         <SplashScreen Image="Assets\SplashScreen.png" />
       </VisualElements>

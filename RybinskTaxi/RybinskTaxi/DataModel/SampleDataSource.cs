@@ -233,7 +233,12 @@ namespace RybinskTaxi.Data
 
         public static IEnumerable<SampleDataGroup> GetGroups(string uniqueId)
         {
-            if (!uniqueId.Equals("AllGroups")) throw new ArgumentException("Only 'AllGroups' is supported as a collection of groups");
+            try
+            {
+                
+                if (!uniqueId.Equals("AllGroups")) throw new ArgumentException("Only 'AllGroups' is supported as a collection of groups");
+            }
+            catch { };
             
             return _sampleDataSource.AllGroups;
         }

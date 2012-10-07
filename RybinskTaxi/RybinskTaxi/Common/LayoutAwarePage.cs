@@ -356,7 +356,13 @@ namespace RybinskTaxi.Common
                 // Передача на страницу параметра навигации и сохраненного состояния страницы с использованием
                 // той же стратегии загрузки приостановленного состояния и повторного создания страниц, удаленных
                 // из кэша
-                this.LoadState(e.Parameter, (Dictionary<String, Object>)frameState[this._pageKey]);
+                try
+                {
+                    this.LoadState(e.Parameter, (Dictionary<String, Object>)frameState[this._pageKey]);
+                }
+                catch {
+                    this.LoadState(e.Parameter, null);
+                };
             }
         }
 
