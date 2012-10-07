@@ -15,9 +15,13 @@
   </Resources>
   <Applications>
     <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="RybinskTaxi.App">
-      <VisualElements DisplayName="Такси Рыбинска" Logo="Assets\Logo.png" SmallLogo="Assets\SmallLogo.png" Description="RybinskTaxi" ForegroundText="light" BackgroundColor="#464646">
+      <VisualElements DisplayName="Такси Рыбинска" Logo="Assets\Logo.png" SmallLogo="Assets\SmallLogo.png" Description="Каталог такси для вызова в городе Рыбинске." ForegroundText="light" BackgroundColor="#464646">
         <DefaultTile ShowName="allLogos" />
         <SplashScreen Image="Assets\SplashScreen.png" />
+        <InitialRotationPreference>
+          <Rotation Preference="landscape" />
+          <Rotation Preference="landscapeFlipped" />
+        </InitialRotationPreference>
       </VisualElements>
       <Extensions>
         <Extension Category="windows.search" />
