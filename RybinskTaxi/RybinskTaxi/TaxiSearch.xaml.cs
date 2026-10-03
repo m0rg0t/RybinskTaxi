@@ -43,7 +43,11 @@ namespace RybinskTaxi
         /// сеанса. Это значение будет равно NULL при первом посещении страницы.</param>
         protected override void LoadState(Object navigationParameter, Dictionary<String, Object> pageState)
         {
-            var queryText = navigationParameter as String;
+            var queryText = navigationParameter as String ?? String.Empty;
+            var group = SampleDataSource.GetGroup("Group-1");
+            SearchResults = group.Items.Where(item =>
+                (item.Title ?? String.Empty).IndexOf(queryText, StringComparison.CurrentCultureIgnoreCase) >= 0 ||
+                (item.Description ?? String.Empty).IndexOf(queryText, StringComparison.CurrentCultureIgnoreCase) >= 0).ToList();
 
             // TODO: Логика поиска, зависящая от приложения. Процесс поиска отвечает за
             //       создание списка выбираемых пользователем категорий результатов:
@@ -78,9 +82,6 @@ namespace RybinskTaxi
                 // RadioButton, используемое без прикрепления, могло отразить изменение
                 selectedFilter.Active = true;
                 
-                SampleDataGroup group1 = SampleDataSource.GetGroup("Group-1");
-
-                SearchResults = group1.Items.Where(c => c.Title.ToString().ToLower().Contains(this.DefaultViewModel["QueryText"].ToString().ToLower()) || c.Description.ToString().ToLower().Contains(this.DefaultViewModel["QueryText"].ToString().ToLower())).ToList<SampleDataItem>();
                 this.DefaultViewModel["Results"] = SearchResults;
 
                 // TODO: Ответить на изменение в активном фильтре, задав для this.DefaultViewModel["Results"]
